@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { Button } from "./_components/ui/button";
 
 const Home = () => {
-  const [] = useState()
   return (
-    <h1 className="bg text-red-500">Home page</h1>
+    <Button>Teste</Button>
   );
 }
 
