@@ -58,7 +58,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
     try {
       await deleteBooking(booking.id)
       setIsSheetOpen(false)
-      toast.success("Reserva cancelado com sucesso")
+      toast.success("Reserva cancelada com sucesso")
     } catch (error) {
       console.error(error)
       toast.error("Erro ao cancelar reserva. Tente novamente")
@@ -71,7 +71,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
 
   return (
     <Sheet open={isSheetOpen} onOpenChange={handleBookingSheetOpenChange}>
-      <SheetTrigger className="w-full">
+      <SheetTrigger className="w-full min-w-[90%]">
         <Card className="min-w-[90%]">
           <CardContent className="flex justify-between p-0">
             {/* ESQUERDA */}
