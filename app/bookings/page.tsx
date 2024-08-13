@@ -1,18 +1,18 @@
 import { getServerSession } from "next-auth"
 import Header from "../_components/header"
 import { authOptions } from "../_lib/auth"
-import { notFound } from "next/navigation"
 import BookingItem from "../_components/booking-item"
 import {
   getConfirmedBookings,
   getConcludedBookings,
 } from "../_data/get-bookings"
+import UnauthorizedContainer from "../_components/unauthorized-container"
 
 const Bookings = async () => {
   const session = await getServerSession(authOptions)
+
   if (!session?.user) {
-    // TODO: Mostrar dialog de login
-    return notFound()
+    return <UnauthorizedContainer />
   }
 
   const confirmedBookings = await getConfirmedBookings()
